@@ -1,0 +1,1 @@
+Laboratório-exames, é parte integrante, de quatro sistemas, clinica, consultório, laboratório, e o final o site que agenda online consulta ou exame. Esta versão está completa faltando o pdf para os relatório, e assinatura digital, para outra versão.
