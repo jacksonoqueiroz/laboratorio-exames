@@ -1,0 +1,282 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7fc;
+    overflow-x: hidden;
+}
+
+/* WRAPPER */
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* SIDEBAR */
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: linear-gradient(180deg, #0d3b66, #1d3557);
+    color: #fff;
+    transition: all 0.3s;
+    min-height: 100vh;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+}
+
+.logo-sidebar {
+    width: 60px;
+    margin-top: 10px;
+}
+
+/* SIDEBAR COLAPSADA DESKTOP */
+#sidebar.active {
+    width: 80px;
+}
+
+#sidebar.active .sidebar-header h5,
+#sidebar.active .sidebar-header small,
+#sidebar.active ul li a span {
+    display: none;
+}
+
+#sidebar ul li a {
+    display: flex;
+    align-items: center;
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+#sidebar.active ul li a {
+    justify-content: center;
+}
+
+
+#sidebar {
+    width: 250px;
+    transition: margin 0.3s ease;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li {
+    padding: 12px 20px;
+}
+
+#sidebar ul li a {
+    color: #ffffff;
+    display: block;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    padding-left: 25px;
+}
+/* Dropdown */
+#sidebar .dropdown-menu {
+    position: static !important;
+    float: none;
+    background: #2f3640;
+    border: none;
+    box-shadow: none;
+    padding-left: 20px;
+}
+
+#sidebar .dropdown-item {
+    color: #f5f6fa;
+}
+
+#sidebar .dropdown-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+#sidebar ul ul li a {
+    font-size: 0.9rem;
+    padding-left: 25px;
+}
+
+#sidebar a[aria-expanded="true"] .bi-chevron-down {
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+#sidebar .bi-chevron-down {
+    transition: 0.3s;
+}
+
+
+/* DROPDOWN SIDEBAR */
+#sidebar .dropdown-menu {
+    display: none;
+    background: #2f3640;
+    border: none;
+    box-shadow: none;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+#sidebar .dropdown-menu.show {
+    display: block;
+    animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#sidebar .dropdown-item {
+    color: #f5f6fa;
+    padding: 8px 15px;
+}
+
+#sidebar .dropdown-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+
+
+/* CONTENT */
+#content {
+    width: 100%;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* TOPBAR */
+.topbar {
+    background: #ffffff;
+    padding: 10px 20px;
+}
+
+.avatar-top {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* BOTÃO SIDEBAR */
+.btn-toggle {
+    background: #0d3b66;
+    color: #fff;
+}
+
+.btn-toggle:hover {
+    background: #145da0;
+    color: #fff;
+}
+
+.active-menu a {
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+/* DASHBOARD */
+
+.card-status {
+    border: none;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-warning {
+    background: linear-gradient(45deg, #f4a261, #e76f51);
+}
+
+.card-primary {
+    background: linear-gradient(45deg, #457b9d, #1d3557);
+}
+
+.card-success {
+    background: linear-gradient(45deg, #2a9d8f, #1b4332);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.card-header i {
+    margin-right: 6px;
+}
+
+/* ==========================
+   ESTILO DE IMPRESSÃO - LABORATÓRIO
+   ========================== */
+
+@media print {
+
+    body {
+        background: #fff;
+        margin: 0;
+        font-size: 12px;
+    }
+
+    /* Esconder botões e ações */
+    .no-print {
+        display: none !important;
+    }
+
+    /* Remover sombra e bordas */
+    .print-clean {
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* Centralizar melhor no papel */
+    .print-area {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h4, h5 {
+        margin-top: 0;
+    }
+
+    /* Rodapé fixo */
+    .print-footer {
+        position: fixed;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 10px;
+        color: #555;
+        border-top: 1px solid #ccc;
+        padding-top: 5px;
+    }
+}
+
+
+
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
